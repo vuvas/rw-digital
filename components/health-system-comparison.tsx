@@ -42,25 +42,25 @@ function getModulesBySystem(system: string): Module[] {
       return [
         {
           name: "Supply Chain Management",
-          icon: <Truck className="h-4 w-4" />,
+          icon: <Truck className="w-4 h-4" />,
           color: "text-orange-600",
           description: "End-to-end supply chain visibility and control",
         },
         {
           name: "Logistics Management",
-          icon: <Boxes className="h-4 w-4" />,
+          icon: <Boxes className="w-4 h-4" />,
           color: "text-purple-600",
           description: "Inventory distribution and logistics tracking",
         },
         {
           name: "Inventory Management",
-          icon: <ClipboardList className="h-4 w-4" />,
+          icon: <ClipboardList className="w-4 h-4" />,
           color: "text-emerald-600",
           description: "Stock level monitoring and management",
         },
         {
           name: "Financial Management",
-          icon: <Wallet className="h-4 w-4" />,
+          icon: <Wallet className="w-4 h-4" />,
           color: "text-blue-600",
           description: "Budget and financial resource tracking",
         },
@@ -69,37 +69,37 @@ function getModulesBySystem(system: string): Module[] {
       return [
         {
           name: "Clinical Module",
-          icon: <Database className="h-4 w-4" />,
+          icon: <Database className="w-4 h-4" />,
           color: "text-blue-600",
           description: "Comprehensive patient health records and clinical documentation management",
         },
         {
           name: "Immunization Module",
-          icon: <Syringe className="h-4 w-4" />,
+          icon: <Syringe className="w-4 h-4" />,
           color: "text-green-600",
           description: "Complete vaccination tracking, scheduling, and coverage monitoring",
         },
         {
           name: "Pharmacy Module",
-          icon: <Pills className="h-4 w-4" />,
+          icon: <Pills className="w-4 h-4" />,
           color: "text-purple-600",
           description: "End-to-end medication management, prescriptions, and inventory",
         },
         {
           name: "Laboratory Module",
-          icon: <TestTube className="h-4 w-4" />,
+          icon: <TestTube className="w-4 h-4" />,
           color: "text-amber-600",
           description: "Comprehensive lab test ordering, processing, and results management",
         },
         {
           name: "Inventory Module",
-          icon: <Boxes className="h-4 w-4" />,
+          icon: <Boxes className="w-4 h-4" />,
           color: "text-emerald-600",
           description: "Real-time facility-level medical supply and stock management",
         },
         {
           name: "Reporting Module",
-          icon: <BarChart4 className="h-4 w-4" />,
+          icon: <BarChart4 className="w-4 h-4" />,
           color: "text-rose-600",
           description: "Advanced analytics, KPI tracking, and customizable reports",
         },
@@ -113,8 +113,8 @@ export default function HealthSystemComparison() {
   // const [activeTab, setActiveTab] = useState("side-by-side")
 
   return (
-    <div className="w-full max-w-7xl mx-auto">
-      <div className="text-center mb-8">
+    <div className="w-full mx-auto max-w-7xl">
+      <div className="mb-8 text-center">
         <div className="flex items-center justify-center gap-3 mb-2">
           <RwandaFlag />
           <h1 className="text-3xl font-bold text-[#00A0D8]">Rwanda Health System Architecture</h1>
@@ -124,26 +124,26 @@ export default function HealthSystemComparison() {
 
       <div className="space-y-4">
         {/* RMS Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Current RMS */}
-          <div className="border-2 border-gray-300 rounded-lg p-4 bg-gray-50/50">
+          <div className="p-4 border-2 border-gray-300 rounded-lg bg-gray-50/50">
             <div className="flex items-center gap-2 mb-4">
-              <Building2 className="h-5 w-5 text-gray-600" />
+              <Building2 className="w-5 h-5 text-gray-600" />
               <h3 className="font-bold text-gray-600">Rwanda Medical Supply (RMS)</h3>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <SystemBox
                 name="SAGE ERP"
                 description="Enterprise Resource Planning"
-                icon={<Database className="h-4 w-4" />}
+                icon={<Database className="w-4 h-4" />}
                 color="gray"
               />
 
               <SystemBox
                 name="eLMIS / OpenLMIS"
                 description="Logistics Management at RMS"
-                icon={<Layers className="h-4 w-4" />}
+                icon={<Layers className="w-4 h-4" />}
                 color="gray"
               />
             </div>
@@ -160,7 +160,7 @@ export default function HealthSystemComparison() {
               <SystemBox
                 name="SAGE SAP"
                 description="Consolidated enterprise system"
-                icon={<Database className="h-4 w-4" />}
+                icon={<Database className="w-4 h-4" />}
                 color="blue"
                 modules={getModulesBySystem("SAGE SAP")}
                 defaultExpanded={true}
@@ -170,7 +170,7 @@ export default function HealthSystemComparison() {
         </div>
 
         {/* Data Flow States */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="hidden md:block" /> {/* Empty div for grid alignment */}
           {/* Future State Flow */}
           <div className="relative">
@@ -179,54 +179,54 @@ export default function HealthSystemComparison() {
         </div>
 
         {/* Health Facility Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Current Health Facility */}
-          <div className="border-2 border-gray-300 rounded-lg p-4 bg-gray-50/50">
+          <div className="p-4 border-2 border-gray-300 rounded-lg bg-gray-50/50">
             <div className="flex items-center gap-2 mb-4">
-              <Hospital className="h-5 w-5 text-gray-600" />
+              <Hospital className="w-5 h-5 text-gray-600" />
               <h3 className="font-bold text-gray-600">Health Facility</h3>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <SystemBox
                 name="EMR (OpenMRS)"
                 description="Electronic Medical Record system"
-                icon={<Database className="h-4 w-4" />}
+                icon={<Database className="w-4 h-4" />}
                 color="gray"
               />
 
               <SystemBox
                 name="DHIS2 Immunization Tracker"
                 description="Disease tracking for immunization"
-                icon={<FileSpreadsheet className="h-4 w-4" />}
+                icon={<FileSpreadsheet className="w-4 h-4" />}
                 color="gray"
               />
 
               <SystemBox
                 name="DHIS2 NCD Tracker"
                 description="Disease tracking for Non-Communicable Diseases"
-                icon={<FileSpreadsheet className="h-4 w-4" />}
+                icon={<FileSpreadsheet className="w-4 h-4" />}
                 color="gray"
               />
 
               <SystemBox
                 name="DHIS2 Report"
                 description="Aggregate reporting system"
-                icon={<FileSpreadsheet className="h-4 w-4" />}
+                icon={<FileSpreadsheet className="w-4 h-4" />}
                 color="gray"
               />
 
               <SystemBox
                 name="OpenMRS"
                 description="Pharmacy management"
-                icon={<Database className="h-4 w-4" />}
+                icon={<Database className="w-4 h-4" />}
                 color="gray"
               />
 
               <SystemBox
                 name="eLMIS"
                 description="Electronic Logistics Management"
-                icon={<Layers className="h-4 w-4" />}
+                icon={<Layers className="w-4 h-4" />}
                 color="gray"
               />
             </div>
@@ -243,7 +243,7 @@ export default function HealthSystemComparison() {
               <SystemBox
                 name="eBuzima"
                 description="Integrated health information platform with 15+ specialized modules for comprehensive healthcare management"
-                icon={<Network className="h-4 w-4" />}
+                icon={<Network className="w-4 h-4" />}
                 color="blue"
                 modules={getModulesBySystem("eBuzima")}
                 defaultExpanded={true}
@@ -270,6 +270,7 @@ interface SystemBoxProps {
 
 function SystemBox({ name, description, icon, color, modules, integrations, defaultExpanded = false }: SystemBoxProps) {
   const [expanded, setExpanded] = useState(defaultExpanded)
+  console.log("integrations", integrations)
 
   const getColorClasses = () => {
     switch (color) {
@@ -299,7 +300,7 @@ function SystemBox({ name, description, icon, color, modules, integrations, defa
         {icon}
         <span className="font-medium">{name}</span>
       </div>
-      <div className="text-xs mt-1 text-muted-foreground">{description}</div>
+      <div className="mt-1 text-xs text-muted-foreground">{description}</div>
 
       {modules && (
         <motion.div
@@ -308,12 +309,12 @@ function SystemBox({ name, description, icon, color, modules, integrations, defa
           animate={{ height: expanded ? "auto" : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="text-xs font-medium mt-1 mb-2">Modules:</div>
+          <div className="mt-1 mb-2 text-xs font-medium">Modules:</div>
           <div className="grid grid-cols-2 gap-2">
             {modules.map((module, index) => (
               <div
                 key={index}
-                className="flex items-start gap-2 p-2 rounded-md bg-white/50 hover:bg-white transition-colors"
+                className="flex items-start gap-2 p-2 transition-colors rounded-md bg-white/50 hover:bg-white"
               >
                 <div className={`mt-0.5 ${module.color}`}>{module.icon}</div>
                 <div className="flex-1 min-w-0">
@@ -327,7 +328,7 @@ function SystemBox({ name, description, icon, color, modules, integrations, defa
       )}
 
       {modules && (
-        <div className="text-xs text-blue-600 mt-2 flex justify-end">
+        <div className="flex justify-end mt-2 text-xs text-blue-600">
           {expanded ? "Click to collapse" : "Click to expand modules"}
         </div>
       )}

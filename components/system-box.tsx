@@ -11,7 +11,12 @@ interface Module {
   description: string
 }
 
-type DataIntegrationItem = {}
+type DataIntegrationItem = {
+  id: string
+  name: string
+  description: string
+  icon: React.ReactNode
+} 
 
 interface SystemBoxProps {
   name: string
@@ -29,8 +34,7 @@ function SystemBox({
   description,
   icon,
   color,
-  modules,
-  integrations,
+  modules, 
   defaultExpanded = false,
   hasMoreModules = false,
 }: SystemBoxProps) {
@@ -69,7 +73,7 @@ function SystemBox({
         <div className={getIconColor()}>{icon}</div>
         <span className={`font-medium ${color === "blue" ? "text-[#00A0D8]" : "text-gray-600"}`}>{name}</span>
       </div>
-      <div className="text-xs mt-1 text-muted-foreground">{description}</div>
+      <div className="mt-1 text-xs text-muted-foreground">{description}</div>
 
       {modules && (
         <motion.div
@@ -78,19 +82,19 @@ function SystemBox({
           animate={{ height: expanded ? "auto" : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="text-xs font-medium mt-1 mb-2">Key Modules:</div>
+          <div className="mt-1 mb-2 text-xs font-medium">Key Modules:</div>
           <div className="grid grid-cols-1 gap-2">
             {modules.map((module, index) => (
               <div
                 key={index}
-                className="flex items-start gap-3 p-3 rounded-md bg-white hover:bg-white/90 transition-colors shadow-sm"
+                className="flex items-start gap-3 p-3 transition-colors bg-white rounded-md shadow-sm hover:bg-white/90"
               >
                 <div className={`mt-1 ${module.color}`}>{module.icon}</div>
                 <div className="flex-1 min-w-0">
                   <div className={`text-sm font-medium mb-1 ${color === "blue" ? "text-[#00A0D8]" : "text-gray-600"}`}>
                     {module.name}
                   </div>
-                  <div className="text-sm text-gray-600 leading-snug">{module.description}</div>
+                  <div className="text-sm leading-snug text-gray-600">{module.description}</div>
                 </div>
               </div>
             ))}
